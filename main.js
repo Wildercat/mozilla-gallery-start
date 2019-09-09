@@ -19,4 +19,14 @@ function switchImg(iSrc) {
   displayedImage.setAttribute('src', iSrc);
 }
 /* Wiring up the Darken/Lighten button */
-btn.onclick
+btn.onclick = function() {
+  if (btn.getAttribute('class') == 'dark') {
+    btn.setAttribute('class', 'light');
+    btn.textContent = 'Lighten';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+  } else {
+    btn.setAttribute('class', 'dark');
+    btn.textContent = 'Darken';
+    overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+  }
+}
